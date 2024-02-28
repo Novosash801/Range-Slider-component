@@ -20,22 +20,20 @@
 		align-items: center;
 		margin-right: 10px;
 		margin-top:  20px;
+		text-decoration: dotted ;
 		button {
 			margin-top: 10px;
 			border: none;
 			background-color: #ffffff;
 			font-size: 18px;
-			color: #82a5b8;
+			color: #2989bd;
 			cursor: pointer;
+			text-decoration: dotted;
 			&:hover {
 				color: #61b3df;
 			}
 		}
 	}
-}
-
-.div__onInput {
-	margin-top: 25px;
 }
 
 .multi-range-slider {
@@ -154,8 +152,8 @@
 		border-style: solid;
 		border-color: #ffffff transparent transparent transparent;
 	}
-	
 }
+
 .multi-range-slider .thumb .caption .max-caption {
 	position: relative;
 	min-width: 70px;
@@ -234,5 +232,283 @@
 	left: 8px;
 }
 
+@media (max-width: 1600px) {
 
+	.multi-range-slider .thumb::before {
+		content: '';
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		border: solid 3px #61b3df;
+		box-shadow: none;
+		border-radius: 50%;
+		z-index: 1;
+		cursor: pointer;
+		top: 3px;
+	}
+
+	.multi-range-slider {
+		width: 800px;
+	}
+	.multi-range-slider .label {
+		font-size: 12px;
+		display: flex;
+		width: 1px;
+		justify-content: center;
+		color: rgba($color: #938a8a, $alpha: .65);
+		font-weight: 700;
+	}
+	.multi-range-slider .caption {
+		width: 2px;
+		height: 2px;
+		left: 1px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: visible;
+	
+	}
+	.multi-range-slider .thumb .caption * {
+		position: relative;
+		min-width: 40px;
+		min-height: 40px;
+		font-size: 10px;
+		text-align: center;
+		line-height: 15px;
+		background-color: #ffffff;
+		border-radius: 15px;
+		color: #61b3df;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		margin-top: 12px;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 13px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: #ffffff transparent transparent transparent;
+		}
+	}
+	.multi-range-slider .thumb .caption .max-caption {
+		position: relative;
+		min-width: 40px;
+		min-height: 40px;
+		font-size: 10px;
+		text-align: center;
+		line-height: 15px;
+		background-color: #ffffff;
+		border-radius: 15px;
+		color: #61b3df;
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		margin-top: 260px;
+		right: 5px;
+		box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.5);
+		&::after {
+			content: '';
+			display: block;   
+			position: absolute;
+			width: 2px;        
+			left: 50%;
+			top: 6px;
+			border-bottom: 8px solid #ffffff;
+			transform: translate(-50%, calc(-100% - 5px));
+			
+		}
+	}
+	.app__slider {
+		position: relative;
+		margin-top: 60px;
+		&__switcher {
+			button {
+				width: 75px;
+				margin-top: 10px;
+				border: none;
+				background-color: #ffffff;
+				font-size: 14px;
+				color: #2989bd;
+				cursor: pointer;
+				text-decoration: dotted;
+				&:hover {
+					color: #61b3df;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 998px) {
+	.multi-range-slider {
+		width: 600px;
+	}
+	
+	.multi-range-slider .label {
+		font-size: 10px;
+		display: flex;
+		width: 1px;
+		justify-content: center;
+		color: rgba($color: #938a8a, $alpha: .65);
+		font-weight: 700;
+	}
+	.multi-range-slider .thumb .caption * {
+		position: relative;
+		min-width: 50px;
+		min-height: 20px;
+		font-size: 10px;
+		text-align: center;
+		line-height: 10px;
+		background-color: #ffffff;
+		border-radius: 15px;
+		color: #61b3df;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 30px;
+			left: 18px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: #ffffff transparent transparent transparent;
+		}
+	}
+	.multi-range-slider .thumb .caption .max-caption {
+		position: relative;
+		min-width: 50px;
+		min-height: 40px;
+		font-size: 12px;
+		text-align: center;
+		line-height: 20px;
+		background-color: #ffffff;
+		border-radius: 15px;
+		color: #61b3df;
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		margin-top: 260px;
+		right: 5px;
+		box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.5);
+		&::after {
+			content: '';
+			display: block;   
+			position: absolute;
+			width: 2px;        
+			left: 50%;
+			top: 6px;
+			border: 6px solid transparent;
+			border-bottom: 15px solid #ffffff;
+			transform: translate(-50%, calc(-100% - 5px));
+			
+		}
+	}
+	.app__slider {
+		position: relative;
+		margin-top: 60px;
+		&__switcher {
+			button {
+				width: 60px;
+				margin-top: 10px;
+				border: none;
+				background-color: #ffffff;
+				font-size: 10px;
+				color: #2989bd;
+				cursor: pointer;
+				text-decoration: dotted;
+				&:hover {
+					color: #61b3df;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.multi-range-slider {
+		width: 400px;
+	}
+	
+	.multi-range-slider .thumb .caption * {
+		position: relative;
+		min-width: 30px;
+		min-height: 30px;
+		font-size: 8px;
+		text-align: center;
+		line-height: 10px;
+		background-color: #ffffff;
+		border-radius: 10px;
+		color: #61b3df;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 30px;
+			left: 8px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: #ffffff transparent transparent transparent;
+		}
+	}
+	.multi-range-slider .thumb .caption .max-caption {
+		position: relative;
+		min-width: 30px;
+		min-height: 30px;
+		font-size: 8px;
+		text-align: center;
+		line-height: 10px;
+		background-color: #ffffff;
+		border-radius: 10px;
+		color: #61b3df;
+		padding: 0px 5px;
+		white-space: wrap;
+		font-weight: 700;
+		margin-top: 220px;
+		right: 5px;
+		box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.5);
+		&::after {
+			content: '';
+			display: block;   
+			position: absolute;
+			width: 2px;        
+			left: 50%;
+			top: 6px;
+			border: 6px solid transparent;
+			border-bottom: 15px solid #ffffff;
+			transform: translate(-50%, calc(-100% - 5px));
+			
+		}
+	}
+	.app__slider {
+		position: relative;
+		margin-top: 60px;
+		&__switcher {
+			button {
+				width: 40px;
+				margin-top: 10px;
+				border: none;
+				background-color: #ffffff;
+				font-size: 8px;
+				color: #2989bd;
+				cursor: pointer;
+				text-decoration: dotted;
+				&:hover {
+					color: #61b3df;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+
+}
 
