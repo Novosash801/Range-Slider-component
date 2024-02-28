@@ -5,23 +5,25 @@ import './AppSlider.scss';
 
 const AppSlider = () => {
 
-    const yearsNumber = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021' ];
-    const monthNumber = ['', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек', '', ];
+    const yearsNumber: string[] = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021' ];
+    const monthNumber: string[] = [ '', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек', ''];
+    
     const transformed = monthNumber.map((item, index, arr) => {
+        
         if (index === 0) {
             return arr[index] = '2015';
         } else if (index === 12) {
-            return arr[index] = '2016';
-        } else {
-            return arr[index];
+            return arr[index] = '2016'
         }
-   
+        else {
+            return arr[index] 
+        } 
     });
     const result = yearsNumber;
-    const result2 = transformed;
+    const result2 = [...transformed]
+    
 
-
-    const [minValue, setMinValueForChange] = useState(0);
+    const [minValue, setMinValueForChange] = useState<number>(0);
     const [maxValue, setMaxValueforChange] = useState(0);
 
     const [minValue2, setMinValueForChange2] = useState(0);
@@ -41,6 +43,8 @@ const AppSlider = () => {
         'Ноя',
         'Дек',
     ];
+
+    
 
     const yearDays = 2556 + (new Date(2014, 0, 1).getFullYear() % 4 === 0 ? 1 : 0);
     const yearDays2 = 730 + (new Date(2015, 0, 1).getFullYear() % 4 === 0 ? 1 : 0);
