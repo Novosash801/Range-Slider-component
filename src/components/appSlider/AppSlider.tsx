@@ -4,11 +4,11 @@ import MultiRangeSlider, { ChangeResult } from 'multi-range-slider-react';
 import './AppSlider.scss';
 
 const AppSlider = () => {
-
-    const yearsNumber: string[] = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021' ];
-    const monthNumber: string[] = [ '', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек', ''];
     
-    const transformed = monthNumber.map((item, index, arr) => {
+    const yearsNumber = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021' ];
+    const monthNumber= [ '', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек', ''];
+    
+    const transformed = monthNumber.map((id, index, arr) => {
         
         if (index === 0) {
             return arr[index] = '2015';
@@ -20,7 +20,7 @@ const AppSlider = () => {
         } 
     });
     const result = yearsNumber;
-    const result2 = [...transformed]
+    const result2 = [...transformed, ...monthNumber.slice(1, 12)]
     
 
     const [minValue, setMinValueForChange] = useState<number>(0);
@@ -101,7 +101,8 @@ const AppSlider = () => {
             
                 {show ?
                     <div className="app__slider-first">
-                        <MultiRangeSlider
+                        <MultiRangeSlider 
+                           
                             labels={result}
                             min={0}
                             max={yearDays + 1}
@@ -112,10 +113,10 @@ const AppSlider = () => {
                             minCaption={minMonthCaption1}
                             maxCaption={maxMonthCaption1}
                             onInput={handleDateChange}
-                            onChange={(e: ChangeResult) => {
+                           /*  onChange={(e: ChangeResult) => {
                                 setMinValueForChange(e.minValue);
                                 setMaxValueforChange(e.maxValue);
-                            }}
+                            }} */
                             
                         />
                         {/* <div className="div__onInput">
@@ -152,21 +153,6 @@ const AppSlider = () => {
                         />
                     </div>}
                     
-                {/* <div className="div__onInput">
-                            <div>onInput :</div>
-                            <div>
-                                <span>
-                                    {minMonthCaption2}:  {maxMonthCaption2}
-                                </span>
-                            </div>
-                        </div>
-                        <div className="div__onChange">
-                            <div>onChangeToDays :</div>
-                            <div>
-                                <span>{minValue2}-</span>
-                                <span>{maxValue2}</span>
-                            </div>
-                        </div> */}
             </div>
         </div>
     );

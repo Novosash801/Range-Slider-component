@@ -8,7 +8,7 @@ const App = () => {
         <div className="app">
             <AppSlider/>
         </div>
-    );
+    )
 };
 
 export default App;
